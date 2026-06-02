@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>髙田 拓馬 — AI時代の人材になる</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0f172a;--navy-soft:#1e293b;--gold:#b8996e;--gold-soft:#d8c2a2;--light:#f6f3ee;--light-strong:#fffdf9;--mist:#ece7de;--muted:#5f6472;--border:rgba(15,23,42,.12);--shadow:0 24px 60px rgba(15,23,42,.08);--font:'Noto Sans JP',sans-serif}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:
+radial-gradient(circle at top left, rgba(184,153,110,.18), transparent 30%),
+radial-gradient(circle at 85% 15%, rgba(15,23,42,.08), transparent 28%),
+linear-gradient(180deg, #faf7f2 0%, #f6f3ee 38%, #f3efe8 100%);color:var(--navy);min-height:100vh;line-height:1.6;display:flex;flex-direction:column}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.32) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.32) 1px, transparent 1px);background-size:48px 48px;mask-image:linear-gradient(180deg, rgba(0,0,0,.18), transparent 55%)}
+html{scroll-behavior:smooth}
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(13,17,23,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.header-inner{max-width:1140px;margin:0 auto;padding:0 24px 0 12px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer}
+.logo img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.2)}
+.logo span{font-size:13px;font-weight:500;letter-spacing:.2em;color:#f5f5f8}
+nav{display:flex;gap:28px}
+nav a{position:relative;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,245,248,.55);text-decoration:none;transition:color .28s ease;cursor:pointer}
+nav a::after{content:'';position:absolute;left:0;bottom:-8px;width:100%;height:1px;background:var(--gold-soft);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+nav a:hover,nav a.active{color:#f5f5f8}
+nav a:hover::after,nav a.active::after{transform:scaleX(1)}
+@media(max-width:640px){nav{display:none}}
+main{padding-top:64px;flex:1}
+.page{display:none}
+.page.active{display:block}
+.hero{position:relative;max-width:1140px;margin:0 auto;padding:36px 24px 72px;min-height:calc(100vh - 64px);display:flex;align-items:center;justify-content:center}
+.hero-shell{position:relative;overflow:hidden;width:100%;padding:72px 40px 40px;border:1px solid rgba(184,153,110,.22);border-radius:32px;background:linear-gradient(145deg, rgba(255,253,249,.9), rgba(255,255,255,.72));box-shadow:var(--shadow);text-align:center}
+.hero-shell::before{content:'';position:absolute;inset:-20% auto auto -6%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle, rgba(184,153,110,.22), transparent 70%)}
+.hero-shell::after{content:'';position:absolute;right:-70px;bottom:-80px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle, rgba(15,23,42,.12), transparent 72%)}
+.eyebrow{position:relative;display:inline-flex;align-items:center;gap:12px;padding:10px 18px;border-radius:999px;border:1px solid rgba(184,153,110,.28);background:rgba(255,253,249,.78);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translate3d(0,12px,0);animation:fadeUp .95s cubic-bezier(.25,.46,.45,.94) forwards .06s;will-change:transform,opacity}
+.eyebrow::before,.eyebrow::after{content:'';width:18px;height:1px;background:rgba(184,153,110,.8)}
+h1{position:relative;margin:28px 0 0;font-family:'Yu Mincho','游明朝','YuMincho','游明朝体','Hiragino Mincho ProN',serif;font-size:clamp(54px,10vw,104px);font-weight:700;line-height:1.18;color:#302c2a;letter-spacing:.08em}
+.title-line{position:relative;display:block;padding:.04em 0;opacity:0;transform:translate3d(0,14px,0);filter:blur(4px);clip-path:inset(100% 0 0 0);animation:titleReveal 1.15s cubic-bezier(.25,.46,.45,.94) forwards;will-change:transform,opacity,filter,clip-path}
+.title-line + .title-line{margin-top:.08em;animation-delay:.12s}
+.title-line::before{content:attr(data-text);position:absolute;inset:0;pointer-events:none;color:#302c2a;opacity:0;transform:translate3d(0,6px,0);filter:blur(6px);animation:titleGhost 1s cubic-bezier(.25,.46,.45,.94) forwards;will-change:transform,opacity,filter}
+.title-line em{position:relative;display:inline-block;font-style:normal;color:#302c2a}
+.sub{position:relative;margin:24px auto 0;font-size:17px;color:var(--muted);max-width:620px;line-height:2.05;opacity:0;transform:translate3d(0,12px,0);animation:fadeUp .9s cubic-bezier(.25,.46,.45,.94) forwards .22s;will-change:transform,opacity}
+.cta-row{position:relative;display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:34px;opacity:0;transform:translate3d(0,12px,0);animation:fadeUp .9s cubic-bezier(.25,.46,.45,.94) forwards .32s;will-change:transform,opacity}
+.btn-primary,.btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 32px;border-radius:999px;font-size:11px;letter-spacing:.22em;text-decoration:none;font-family:var(--font);transition:transform .38s cubic-bezier(.25,.46,.45,.94),background .38s ease,color .38s ease,border-color .38s ease,box-shadow .38s ease}
+.btn-primary{background:linear-gradient(135deg, var(--navy), var(--navy-soft));color:var(--light-strong);box-shadow:0 14px 34px rgba(15,23,42,.18)}
+.btn-primary:hover{background:linear-gradient(135deg, #18243c, #2a3850);transform:translate3d(0,-1px,0)}
+.btn-outline{border:1px solid rgba(15,23,42,.12);color:var(--navy);background:rgba(255,255,255,.56)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translate3d(0,-1px,0)}
+.hero-meta{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:780px;margin:42px auto 0}
+.hero-stat{padding:18px 18px 16px;border:1px solid rgba(15,23,42,.08);border-radius:20px;background:rgba(255,255,255,.62);text-align:left}
+.hero-stat strong{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.hero-stat span{font-size:13px;color:var(--muted);line-height:1.8}
+@media(max-width:720px){.hero{padding:24px 16px 56px}.hero-shell{padding:56px 22px 26px;border-radius:24px}.hero-meta{grid-template-columns:1fr}.eyebrow{letter-spacing:.22em}}
+.about-section{max-width:1140px;margin:0 auto;padding:110px 24px}
+.about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:stretch}
+@media(max-width:640px){.about-grid{grid-template-columns:1fr}}
+.about-left{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:44px 32px;border:1px solid rgba(184,153,110,.18);border-radius:28px;background:linear-gradient(180deg, rgba(255,253,249,.88), rgba(255,255,255,.58));box-shadow:var(--shadow)}
+.avatar-wrap{width:170px;height:170px;border:6px solid rgba(255,255,255,.8);overflow:hidden;border-radius:50%;box-shadow:0 20px 50px rgba(15,23,42,.12)}
+.avatar-wrap img{width:100%;height:100%;object-fit:cover}
+.label{font-size:11px;letter-spacing:.2em;color:var(--gold);margin-bottom:4px}
+.name-text{font-size:24px;font-weight:300;letter-spacing:.08em}
+.about-right{display:flex;flex-direction:column;justify-content:center;gap:24px;padding:44px 40px;border:1px solid rgba(15,23,42,.08);border-radius:28px;background:rgba(255,255,255,.56)}
+.section-label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.bio{font-size:14px;line-height:2.1;color:var(--muted)}
+.services{display:flex;flex-direction:column;gap:10px;list-style:none}
+.services li{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--muted)}
+.services li::before{content:'';display:inline-block;width:16px;height:1px;background:var(--gold);flex-shrink:0}
+.results-section{max-width:1140px;margin:0 auto;padding:110px 24px}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:640px){.stats-grid{grid-template-columns:1fr}}
+.stat-item{display:flex;flex-direction:column;gap:14px;padding:38px 32px;border:1px solid rgba(15,23,42,.08);border-radius:24px;background:rgba(255,255,255,.66);box-shadow:var(--shadow)}
+.stat-value{font-size:56px;font-weight:300;color:var(--navy)}
+.stat-label{font-size:11px;letter-spacing:.18em;color:var(--muted)}
+footer{border-top:1px solid rgba(255,255,255,.08);background:#0d1117;margin-top:40px}
+.footer-inner{max-width:1140px;margin:0 auto;padding:20px 24px 20px 12px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.footer-logo{display:flex;align-items:center;gap:8px}
+.footer-logo img{width:24px;height:24px;border-radius:50%;object-fit:cover}
+.footer-copy,.footer-logo span{font-size:11px;color:rgba(245,245,248,.45);letter-spacing:.05em}
+.business{max-width:1140px;margin:0 auto;padding:36px 24px 110px}
+.biz-panel{padding:44px 28px 28px;border:1px solid rgba(15,23,42,.08);border-radius:32px;background:linear-gradient(180deg, rgba(255,255,255,.68), rgba(255,253,249,.6));box-shadow:var(--shadow)}
+.biz-header{text-align:center;margin-bottom:56px}
+.biz-label{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.biz-title{font-size:30px;font-weight:500;color:var(--navy);letter-spacing:.04em}
+.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:640px){.biz-grid{grid-template-columns:1fr}}
+.biz-link{text-decoration:none;color:inherit;display:block}
+.biz-card{background:rgba(255,255,255,.76);padding:38px 28px;border:1px solid rgba(15,23,42,.08);border-radius:26px;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;transition:transform .42s cubic-bezier(.25,.46,.45,.94),box-shadow .42s cubic-bezier(.25,.46,.45,.94),border-color .42s ease;will-change:transform}
+.biz-card:hover{transform:translate3d(0,-3px,0);box-shadow:0 22px 34px rgba(15,23,42,.1);border-color:rgba(184,153,110,.26)}
+.biz-link:focus-visible .biz-card{outline:2px solid rgba(184,153,110,.5);outline-offset:4px;border-color:rgba(184,153,110,.3)}
+.biz-icon{width:88px;height:88px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,153,110,.24);border-radius:24px;background:linear-gradient(180deg, rgba(255,253,249,.92), rgba(248,243,235,.9));color:var(--navy)}
+.biz-name{font-size:17px;font-weight:500;color:var(--navy)}
+.biz-line{width:24px;height:1px;background:var(--gold)}
+.biz-desc{font-size:12px;color:var(--muted);line-height:1.95}
+@keyframes fadeUp{from{opacity:0;transform:translate3d(0,12px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+.fade-in{opacity:0;transform:translate3d(0,12px,0);animation:fadeUp .95s cubic-bezier(.25,.46,.45,.94) forwards;will-change:transform,opacity}
+@keyframes titleReveal{
+  0%{opacity:0;transform:translate3d(0,16px,0);filter:blur(5px);clip-path:inset(100% 0 0 0)}
+  60%{opacity:.88;clip-path:inset(24% 0 0 0);filter:blur(1.5px)}
+  100%{opacity:1;transform:translate3d(0,0,0);filter:blur(0);clip-path:inset(0 0 0 0)}
+}
+@keyframes titleGhost{
+  0%{opacity:0;transform:translate3d(0,10px,0);filter:blur(8px)}
+  35%{opacity:.08}
+  100%{opacity:0;transform:translate3d(0,0,0);filter:blur(5px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .eyebrow,.sub,.cta-row,.fade-in,.title-line,.title-line::before{animation:none!important;opacity:1;transform:none;filter:none;clip-path:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo" onclick="goTo('')">
+      <img src="https://skyagent-artifacts.skywork.ai/router/agent/2026-05-25/prod_agent_68671c7c-fadd-4167-b39b-fe3fbb68ffb3/sns%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%94%A8%E5%86%86%E5%BD%A2%E7%94%BB%E5%83%8F2_0191796f31864e258f0188105aaaca4f.png" alt="たか田"/>
+      <span>たか田</span>
+    </div>
+    <nav>
+      <a id="nav-home" onclick="goTo('')">TOP</a>
+      <a id="nav-about" onclick="goTo('about')">ABOUT</a>
+      <a id="nav-results" onclick="goTo('results')">RESULTS</a>
+      <a href="https://forms.google.com/d/e/1FAIpQLSddjlWNKFU6gMm7GrK0o8E5OJlvwkxxYDSontP_eHgbkJBXvw/viewform" target="_blank" rel="noopener">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div id="page-home" class="page active">
+    <section class="hero">
+      <div class="hero-shell">
+        <p class="eyebrow">AI Consultant / Trainer / SNS Consultant</p>
+        <h1 aria-label="AI時代の人材になる">
+          <span class="title-line" data-text="AI時代の"><em>AI時代の</em></span>
+          <span class="title-line" data-text="人材になる"><em>人材になる</em></span>
+        </h1>
+        <p class="sub">AIコンサル/研修講師・SNSコンサル。<br>法人・個人問わず導入から定着まで伴走支援</p>
+        <div class="cta-row">
+          <a href="https://forms.google.com/d/e/1FAIpQLSddjlWNKFU6gMm7GrK0o8E5OJlvwkxxYDSontP_eHgbkJBXvw/viewform" target="_blank" rel="noopener" class="btn-primary">お問い合わせ</a>
+          <a href="https://x.com/daifukujinji" target="_blank" rel="noopener" class="btn-outline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.74l7.73-8.835L1.254 2.25H8.08l4.261 5.635 5.903-5.635zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </a>
+        </div>
+        <div class="hero-meta fade-in">
+          <div class="hero-stat">
+            <strong>Support</strong>
+            <span>AI導入から現場定着まで、実務ベースで伴走支援</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Training</strong>
+            <span>法人研修・セミナーを、わかりやすく実践重視で設計</span>
+          </div>
+          <div class="hero-stat">
+            <strong>Social</strong>
+            <span>SNS設計から運用改善まで、一貫してサポート</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="border-top:1px solid var(--border)"></div>
+
+    <section class="business fade-in">
+      <div class="biz-panel">
+        <div class="biz-header">
+          <p class="biz-label">Business</p>
+          <h2 class="biz-title">事業紹介</h2>
+        </div>
+        <div class="biz-grid">
+          <a class="biz-link" href="./ai-consulting.html">
+            <div class="biz-card">
+              <div class="biz-icon">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                  <rect x="6" y="6" width="12" height="12"/>
+                  <rect x="9" y="9" width="6" height="6"/>
+                  <line x1="9" y1="6" x2="9" y2="3"/><line x1="12" y1="6" x2="12" y2="3"/><line x1="15" y1="6" x2="15" y2="3"/>
+                  <line x1="9" y1="18" x2="9" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/><line x1="15" y1="18" x2="15" y2="21"/>
+                  <line x1="6" y1="9" x2="3" y2="9"/><line x1="6" y1="12" x2="3" y2="12"/><line x1="6" y1="15" x2="3" y2="15"/>
+                  <line x1="18" y1="9" x2="21" y2="9"/><line x1="18" y1="12" x2="21" y2="12"/><line x1="18" y1="15" x2="21" y2="15"/>
+                </svg>
+              </div>
+              <p class="biz-name">AIコンサル</p>
+              <div class="biz-line"></div>
+              <p class="biz-desc">導入から定着まで<br>ハンズオンで支援</p>
+            </div>
+          </a>
+          <a class="biz-link" href="./sns-consulting.html">
+            <div class="biz-card">
+              <div class="biz-icon">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                  <circle cx="18" cy="5" r="2.5"/>
+                  <circle cx="6" cy="12" r="2.5"/>
+                  <circle cx="18" cy="19" r="2.5"/>
+                  <line x1="15.7" y1="6.2" x2="8.3" y2="10.8"/>
+                  <line x1="8.3" y1="13.2" x2="15.7" y2="17.8"/>
+                  <circle cx="18" cy="5" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="6" cy="12" r="1" fill="currentColor" stroke="none"/>
+                  <circle cx="18" cy="19" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+              <p class="biz-name">SNSコンサル</p>
+              <div class="biz-line"></div>
+              <p class="biz-desc">アカウント設計から運用まで。<br>代行も依頼可能</p>
+            </div>
+          </a>
+          <a class="biz-link" href="./training.html">
+            <div class="biz-card">
+              <div class="biz-icon">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+                  <polygon points="12,3 22,8 12,13 2,8"/>
+                  <path d="M6 10.5v5c0 0 2 2.5 6 2.5s6-2.5 6-2.5v-5"/>
+                  <line x1="22" y1="8" x2="22" y2="14"/>
+                  <circle cx="22" cy="14.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </div>
+              <p class="biz-name">研修事業</p>
+              <div class="biz-line"></div>
+              <p class="biz-desc">法人・個人問わずAI研修。<br>実施から定着まで</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="page-about" class="page">
+    <section class="about-section">
+      <div class="about-grid fade-in">
+        <div class="about-left">
+          <div class="avatar-wrap">
+            <img src="https://skyagent-artifacts.skywork.ai/router/agent/2026-05-25/prod_agent_68671c7c-fadd-4167-b39b-fe3fbb68ffb3/sns%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%94%A8%E5%86%86%E5%BD%A2%E7%94%BB%E5%83%8F2_0191796f31864e258f0188105aaaca4f.png" alt="髙田 拓馬"/>
+          </div>
+          <div>
+            <p class="label">NAME</p>
+            <p class="name-text">髙田 拓馬</p>
+          </div>
+        </div>
+        <div class="about-right">
+          <p class="section-label">About</p>
+          <p class="bio">AIコンサルタント・研修講師・SNSコンサルタントとして活動。法人・個人を問わず、AIやSNSの導入から定着まで一貫した伴走支援を提供しています。企業研修からセミナー登壇まで、実践的な知識を届けることで「AI時代の人材」育成に貢献します。</p>
+          <ul class="services">
+            <li>AI活用コンサルティング</li>
+            <li>企業・法人向け研修</li>
+            <li>SNSマーケティング支援</li>
+            <li>セミナー登壇</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="page-results" class="page">
+    <section class="results-section">
+      <p class="section-label fade-in" style="margin-bottom:48px">Results</p>
+      <div class="stats-grid">
+        <div class="stat-item fade-in"><span class="stat-value">—</span><span class="stat-label">セミナー登壇回数</span></div>
+        <div class="stat-item fade-in"><span class="stat-value">—</span><span class="stat-label">最大セミナー申込</span></div>
+        <div class="stat-item fade-in"><span class="stat-value">—</span><span class="stat-label">法人研修実績</span></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="https://skyagent-artifacts.skywork.ai/router/agent/2026-05-25/prod_agent_68671c7c-fadd-4167-b39b-fe3fbb68ffb3/sns%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%94%A8%E5%86%86%E5%BD%A2%E7%94%BB%E5%83%8F2_0191796f31864e258f0188105aaaca4f.png" alt="たか田"/>
+      <span>たか田</span>
+    </div>
+    <p class="footer-copy">© 2026 髙田 拓馬. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const pages = ["home", "about", "results"];
+
+function goTo(name) {
+  const target = name || "home";
+
+  pages.forEach((pageName) => {
+    document.getElementById("page-" + pageName).classList.toggle("active", pageName === target);
+  });
+
+  pages.forEach((pageName) => {
+    const nav = document.getElementById("nav-" + pageName);
+    const isActive = pageName === "home" ? target === "home" : pageName === target;
+    if (nav) nav.classList.toggle("active", isActive);
+  });
+
+  window.scrollTo(0, 0);
+  location.hash = name ? "#" + name : "";
+
+  document.querySelectorAll("#page-" + target + " .fade-in").forEach((element) => {
+    element.style.animation = "none";
+    element.offsetHeight;
+    element.style.animation = "";
+  });
+}
+
+(function initFromHash() {
+  const hash = location.hash.replace("#", "");
+  if (hash === "about" || hash === "results") {
+    goTo(hash);
+  }
+})();
+
+window.addEventListener("hashchange", () => {
+  const hash = location.hash.replace("#", "");
+  goTo(hash || "home");
+});
+</script>
+</body>
+</html>

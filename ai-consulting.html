@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>AIコンサル | 髙田 拓馬</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0f172a;--navy-soft:#1e293b;--gold:#b8996e;--light:#f6f3ee;--light-strong:#fffdf9;--muted:#5f6472;--border:rgba(15,23,42,.12);--shadow:0 24px 60px rgba(15,23,42,.08);--font:'Noto Sans JP',sans-serif}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{font-family:var(--font);background:radial-gradient(circle at top left, rgba(184,153,110,.18), transparent 30%),linear-gradient(180deg, #faf7f2 0%, #f6f3ee 38%, #f3efe8 100%);color:var(--navy);line-height:1.75}
+header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.78);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+.header-inner{max-width:1140px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo,.nav{display:flex;align-items:center}
+.logo{gap:10px;text-decoration:none}
+.logo img{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2)}
+.logo span,.nav a{color:#f5f5f8}
+.logo span{font-size:13px;font-weight:500;letter-spacing:.2em}
+.nav{gap:28px}
+.nav a{font-size:11px;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;opacity:.6;transition:opacity .3s ease}
+.nav a.active,.nav a:hover{opacity:1}
+main{max-width:1140px;margin:0 auto;padding:36px 24px 96px}
+.hero{padding:72px 48px;border:1px solid rgba(184,153,110,.22);border-radius:32px;background:linear-gradient(145deg, rgba(255,253,249,.9), rgba(255,255,255,.72));box-shadow:var(--shadow)}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+h1{margin-top:18px;font-size:clamp(40px,7vw,68px);line-height:1.2;font-family:'Yu Mincho','游明朝','YuMincho','Hiragino Mincho ProN',serif}
+.lead{margin-top:18px;max-width:700px;font-size:16px;color:var(--muted);line-height:2}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:999px;text-decoration:none;font-size:12px;letter-spacing:.16em}
+.btn-primary{background:linear-gradient(135deg, var(--navy), var(--navy-soft));color:var(--light-strong)}
+.btn-secondary{border:1px solid var(--border);color:var(--navy);background:rgba(255,255,255,.58)}
+.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:28px}
+.panel{padding:32px;border:1px solid var(--border);border-radius:28px;background:rgba(255,255,255,.68);box-shadow:var(--shadow)}
+.panel h2{font-size:24px;margin-bottom:18px}
+.list{display:grid;gap:12px;list-style:none}
+.list li{padding:16px 18px;border:1px solid rgba(15,23,42,.08);border-radius:18px;background:rgba(255,255,255,.72)}
+.steps{display:grid;gap:14px}
+.step{padding:18px;border-left:2px solid rgba(184,153,110,.42);background:rgba(255,253,249,.72)}
+.section{margin-top:28px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{padding:24px;border:1px solid var(--border);border-radius:24px;background:rgba(255,255,255,.7)}
+.card strong{display:block;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+footer{padding:24px;text-align:center;color:var(--muted);font-size:12px}
+@media(max-width:900px){.grid,.cards{grid-template-columns:1fr}.hero{padding:48px 24px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <a class="logo" href="./index.html">
+      <img src="https://skyagent-artifacts.skywork.ai/router/agent/2026-05-25/prod_agent_68671c7c-fadd-4167-b39b-fe3fbb68ffb3/sns%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E7%94%A8%E5%86%86%E5%BD%A2%E7%94%BB%E5%83%8F2_0191796f31864e258f0188105aaaca4f.png" alt="たか田"/>
+      <span>たか田</span>
+    </a>
+    <nav class="nav">
+      <a href="./index.html">Top</a>
+      <a href="./index.html#about">About</a>
+      <a href="./index.html#results">Results</a>
+      <a href="https://forms.google.com/d/e/1FAIpQLSddjlWNKFU6gMm7GrK0o8E5OJlvwkxxYDSontP_eHgbkJBXvw/viewform" target="_blank" rel="noopener">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">AI Consulting</p>
+    <h1>AIコンサル</h1>
+    <p class="lead">業務にAIをどう組み込むかを、現場に合わせて設計する伴走型の支援です。導入前の整理から、実際の運用ルールづくり、チームへの定着まで一気通貫でサポートします。</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://forms.google.com/d/e/1FAIpQLSddjlWNKFU6gMm7GrK0o8E5OJlvwkxxYDSontP_eHgbkJBXvw/viewform" target="_blank" rel="noopener">相談する</a>
+      <a class="btn btn-secondary" href="./index.html">トップへ戻る</a>
+    </div>
+  </section>
+
+  <div class="grid">
+    <section class="panel">
+      <h2>支援内容</h2>
+      <ul class="list">
+        <li>AI導入の目的整理と優先順位づけ</li>
+        <li>部署や業務別の活用アイデア設計</li>
+        <li>プロンプト設計、運用フロー、社内ルール整備</li>
+        <li>導入後の改善サイクルづくりと定着支援</li>
+      </ul>
+    </section>
+    <aside class="panel">
+      <h2>こんな方向け</h2>
+      <ul class="list">
+        <li>AIを導入したいが、何から始めるべきか迷っている</li>
+        <li>一部の人しか使っておらず、組織に広がらない</li>
+        <li>実務に落とし込める使い方を整理したい</li>
+      </ul>
+    </aside>
+  </div>
+
+  <section class="panel section">
+    <h2>進め方</h2>
+    <div class="steps">
+      <div class="step">1. 現状ヒアリングと課題整理</div>
+      <div class="step">2. 活用方針の設計と優先テーマの選定</div>
+      <div class="step">3. 実務に合わせた導入・検証・改善</div>
+    </div>
+  </section>
+
+  <section class="section cards">
+    <div class="card">
+      <strong>Strategy</strong>
+      経営視点と現場視点の両方から、無理のない導入設計を行います。
+    </div>
+    <div class="card">
+      <strong>Hands-on</strong>
+      実際に使える形まで落とし込む、実務寄りの伴走支援です。
+    </div>
+    <div class="card">
+      <strong>Retention</strong>
+      一時的な導入で終わらず、定着までを前提に支援します。
+    </div>
+  </section>
+</main>
+<footer>© 2026 髙田 拓馬. All rights reserved.</footer>
+</body>
+</html>
